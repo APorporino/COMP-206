@@ -1,0 +1,51 @@
+#!/bin/bash
+#ANTHONY PORPORINO
+#260863300
+
+#NOTE: my script will assume postional argument FILE is a sub directory not a list of files
+
+#Make sure user inputted correct number of arguments 
+if [ $# -lt 3 ]; 
+then
+	echo “You have the incorrect number of arguments. The correct syntax is: ./backup SWITCH FILES DEST MESSAGE. Please try again.”
+	exit 1	#Terminate the program with exit status 1 to indicate failure.
+fi
+
+#Figure out if switch is included and shift paramters
+if [ "$1" == "-D" ];
+then
+	delete="-D"		#delete will now store the switch 
+	shift			#Shift positional arguments by 1 to the left
+else
+	delete="no"
+fi
+
+#See if folder destination exists if not create it
+if [ ! -d $2 ];	#$2 is now DEST since shift was performed
+then
+	mkdir $2
+fi
+
+#Create date variable with only date in format yyyy-mm-dd
+date1=$(date '+%Y-%m-%d')
+
+#Make the backup and move it to DEST
+tar -cf "backup$date1.tar" $1		#Assuming $1 is a sub directory and not a list of files
+chmod u=rw "backup$date1.tar"
+mv "backup$date1.tar" $2
+
+#If -D delete original
+if [ "$delete" == "-D" ];
+then
+	rm -r $1
+fi 
+
+#Add logger to backup directory
+cd $2
+shift 2
+message=""
+for word in $@ 
+do
+	message="$message$word "
+done
+echo "$(date) $message" >> backups.log
