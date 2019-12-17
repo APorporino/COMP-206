@@ -25,13 +25,28 @@ Assignments completed for COMP206 at McGill University. Bash and C
         
                                     mkproj ARGUMENT OWNER
 
-Assignment 3:
+## Assignment 3:
 
-- 
+- Contains a bash script and c file.
+    
+    1. Bash script is a hidden login script (.bash_profile) that will peronalize shell environment on login
 
-Assignment 4:
+    2. triangles.c is a c program that will print asteirx in shape of a triangle with the size of the base that user inputed from the command line. For example if the executable's name is triangles (you can do this by running the compile.sh) running the command: ./triangles 3 , would result in:
+      *
+     ** 
+    ***
 
-- 
+
+## Assignment 4:
+
+- Contains two c programs:
+
+    1. reverse.c is a c program that takes command line input two words and returns whether or not these two words are reverses of each other. For example if reverse is the name of the executable (again you can just run compile.sh to make this) then the command ./reverse RACECAR RACECAR would result in an output that says they are reverses.
+
+    2. matrix.c is a c program that implements functions fillMatrix(), printMatrix(), transposeMatrix(), and multiplyMatrix() for a matrix created by a double array (5x5). The main function will call fillMatrix() to randomly create a new matrix and then call printMatrix() to print it. It finds the transpose of the matrix using transposeMatrix() and prints it again. Lastly it will multiply the matrix by another matrix (that has been hardcoded), and print it to the screen once more.
+
+    The main program just illustrates the power of the function. If needed could be used by another program that requires these functions.
+
 
 Assignment 5:
 
