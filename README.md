@@ -89,9 +89,12 @@ There are two header files linked.h and ssv.h so main only has to include those 
 
 ## Assignment 7:
 
-The goal of this assignment was to get familiar with HTML, and CGI. 
-As a class the goal was to create a game where each student created their own web page on a McGill cs server: https://www.cs.mcgill.ca/~studentUsername/. 
-Each page had a question related to c that the person playing the game could try to answer to win gold. Once the answer was submitted, the CGI part in the HTML document called the executble made from answer.c to process the answer and either award or remove gold. Once 100 gold is reached the user wins and a WIN page is shown, and once the user runs out of gold a GAME OVER page is shown.
+The goal of this assignment was to get familiar with HTML, and CGI.<br/>
+
+As a class the goal was to create a game where each student created their own web page on a McGill cs server: https://www.cs.mcgill.ca/~studentUsername/. <br/>
+
+Each page had a question related to c that the person playing the game could try to answer to win gold. Once the answer was submitted, the CGI part in the HTML document called the executble made from answer.c to process the answer and either award or remove gold. Once 100 gold is reached the user wins and a WIN page is shown, and once the user runs out of gold a GAME OVER page is shown.<br/>
+
 The web page also allows a user to move to 4 other students pages. The idea was to link everyone in the classes pages together. Using CGI to call the executable made from addgold.c from another student, one could display the web page of another student. We also had to implement our own addgold.c to allow other students to link to our page.
 
 
